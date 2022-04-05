@@ -5,7 +5,7 @@ import MuseumDetail from "./Museum-detail";
 function ListMuseums () {
 
     const [museos, setMuseos] = useState([]);
-    const [museo, setMuseo] = useState([]);
+    const [museo, setMuseo] = useState();
     let centinela = true;
 
     useEffect(() => {
@@ -15,22 +15,23 @@ function ListMuseums () {
     }, []);
 
     const vaciar = () => {
-        centinela = false
+        centinela = true
         setMuseo([])
     }
     const seleccion = (museoId) => {
         let encontrado = museos.find((museo) => museo.id === museoId);
         setMuseo(encontrado);
+        centinela = false
       };
     
     return (
         < div className="container">
             <p className="">
                 <span>Home</span> {" > "} <span onClick={vaciar}>Museos</span>
-                {centinela && (
+                {centinela (
                 <>
                     {" > "}
-                    <span> {museo.name} </span>
+                    <span> museo</span>
                 </>
                 )}
             </p>
