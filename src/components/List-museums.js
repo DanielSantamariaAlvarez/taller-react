@@ -28,12 +28,6 @@ function ListMuseums () {
         < div className="container">
             <p className="titulito">
                 <span>Home</span> {" > "} <span onClick={vaciar}>Museos</span>
-                {centinela (
-                <>
-                    {" > "}
-                    <span> museo</span>
-                </>
-                )}
             </p>
 
             <div className="header">
