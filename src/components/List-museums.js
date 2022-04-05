@@ -21,6 +21,7 @@ function ListMuseums () {
     const seleccion = (museoId) => {
         let encontrado = museos.find((museo) => museo.id === museoId);
         setMuseo(encontrado);
+        console.log('press')
         centinela = false
       };
     
@@ -31,22 +32,23 @@ function ListMuseums () {
             </p>
 
             <div className="header">
-                {centinela ? "MUSEOS" : museo.name + ": Obras principales"}
+                {true ? "MUSEOS" : museo.name + ": Obras principales"}
             </div>
-            {centinela?(
+            {centinela ? (
                 <div className="museum-list row">
           {museos.map((mus) => (
                 <div className="col-md-3">
                     <MuseumDetail
                         museum={mus}
-                        elegirMuseo={seleccion}
+                        seleccion={seleccion}
                         key={mus.id}
-                    ></MuseumDetail>
+                    >
+                    </MuseumDetail>
                 </div>
           ))}
         </div>
             ):(
-                <Museum museum={museo}></Museum>
+                <Museum museum={museo}>eee</Museum>
             )}
         </div>
         )

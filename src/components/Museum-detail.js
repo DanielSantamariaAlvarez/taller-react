@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-
-class MuseumDetail extends Component {
-  render() {
-    return <div class="card" >
-      <img class="card-img-top" src="..." alt="foto museo"></img>
-  <div class="card-body">
-    <h5 class="card-title">Nombre</h5>
-    <p class="card-text">Ciudad</p>
+import React from "react";
+function MuseumDetail ({seleccion, museum}){
+    return (
+    <div className="card" onClick={()=>seleccion(museum.id)} >
+      <div className="imagen"><img className="card-img-top" src= {museum.image} alt="foto museo"></img></div>
+  <div className="card-body">
+    <h5 className="card-title">{museum.name}</h5>
+    <p className="card-text">{museum.city}</p>
   </div>
-</div>;
-  }
+</div>
+)
 }
 
 export default MuseumDetail;
