@@ -14,7 +14,9 @@ nav ul{
   justify-content: space-between;
 }
 nav ul li{
-  padding: 0 5px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-family:'Roboto', sans-serif;
 }
 .logo{
   font-family: 'Sevillana', cursive;
@@ -22,4 +24,29 @@ nav ul li{
 }
 .bold{
   font-weight: bold;
+}
+
+.titulito{
+  padding-top: 20px;
+  font-family:'Roboto', sans-serif;
+}
+
+.header{
+  padding: 10px;
+  font-family:'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+  background-color: #c4c4c4;
+}
+
+.card{
+  margin-top: 30px;
+  background-color: #c4c4c4;
+  font-family:'Roboto', sans-serif;
+  border-radius: 0%;
+  border-color: black;
+}
+.card-body{
+  text-align: center;
 }
