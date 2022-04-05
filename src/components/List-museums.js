@@ -5,8 +5,8 @@ import MuseumDetail from "./Museum-detail";
 function ListMuseums () {
 
     const [museos, setMuseos] = useState([]);
-    const [museo, setMuseo] = useState();
-    let centinela = true;
+    const [museo , setMuseo] = useState(undefined);
+    const [centinela, setCentinela] = useState(true)
 
     useEffect(() => {
         fetch("https://back-museums-uniandes.herokuapp.com/api/museums")
@@ -15,14 +15,13 @@ function ListMuseums () {
     }, []);
 
     const vaciar = () => {
-        centinela = true
-        setMuseo([])
+        setCentinela(true)
+        setMuseo(undefined)
     }
     const seleccion = (museoId) => {
-        let encontrado = museos.find((museo) => museo.id === museoId);
-        setMuseo(encontrado);
-        console.log('press')
-        centinela = false
+        let encontrado = museos.find((mus) => mus.id === museoId);
+        setMuseo(encontrado)
+        setCentinela(false)
       };
     
     return (
@@ -32,8 +31,9 @@ function ListMuseums () {
             </p>
 
             <div className="header">
-                {true ? "MUSEOS" : museo.name + ": Obras principales"}
+                {centinela ? "MUSEOS" : museo.name + ": Obras principales"}
             </div>
+
             {centinela ? (
                 <div className="museum-list row">
           {museos.map((mus) => (
@@ -48,7 +48,9 @@ function ListMuseums () {
           ))}
         </div>
             ):(
-                <Museum museum={museo}>eee</Museum>
+                <div>
+                <Museum museum={museo}></Museum>
+                </div>
             )}
         </div>
         )

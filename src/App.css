@@ -44,8 +44,7 @@ nav ul li{
   margin-top: 30px;
   background-color: #c4c4c4;
   font-family:'Roboto', sans-serif;
-  border-radius: 0%;
-  border-color: black;
+  border: 1px solid black;
   height: 100%;
 }
 .imagen{
@@ -60,4 +59,21 @@ nav ul li{
 }
 .card-body{
   text-align: center;
+}
+
+.image, .desc{
+  background-color: #c4c4c4;
+  border: 1px solid black;
+}
+.image{
+  padding: 10px;
+  text-align: center;
+  margin-right: 20px;
+}
+.image h3{
+  font-size: 18px;
+  padding-top: 5px;
+}
+.museum-detail .image img{
+  width: 100%;
 }

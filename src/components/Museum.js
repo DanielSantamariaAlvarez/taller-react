@@ -1,9 +1,19 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import Obra from './Obra'
 
-class Museum extends Component {
-  render() {
-    return <div>Museum</div>;
-  }
+function Museum ({museum}) {
+    const [museo]=useState(museum)
+    return (
+        <>
+            <div className="row">
+                
+                {museo.artworks.map(obra => (
+                    <Obra key={obra.id} obra={obra} imagen = {museo.image}></Obra>
+                ))}
+            </div>
+            
+        </>
+    )
 }
 
 export default Museum;
